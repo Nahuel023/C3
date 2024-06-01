@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "CLEAN",
+        //     "type": "cppvsdbg",
+        //     "request": "launch",
+        //     "program": "${workspaceRoot}/Make/bin/make.exe",
+        //     "args": ["clean"],
+        //     "stopAtEntry": false,
+        //     "cwd": "${workspaceFolder}",
+        //     "environment": [],
+        //     "externalConsole": false
+        // },
+        {
+            "name": "COMPILE",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "C:/CP3/MBEDGCC_VSC23/MyMake/MyMake.exe",
+            "args": ["-j4", "all"],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "internalConsole"
+            // "externalConsole": false
+        }
+    ]
+}
