@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Maps</class>
+ <widget class="QMainWindow" name="Maps">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+#centralwidget {
+background-color:
+qlineargradient(spread:reflect, x1:0.5, y1:0, x2:0, y2:0,
+stop:0 rgba(91, 204, 233, 100), stop:1 rgba(32, 80, 96,
+100));
+
+ }
+QMenu
+{
+background-color:
+qlineargradient(spread:reflect, x1:0.9, y1:0, x2:0.6, y2:0, x3:0.2, y3:0
+stop:0.2 rgba(100, 210, 255, 70), stop:0.5 rgba(91, 180, 249, 70), stop:1 rgba(32, 80, 96,
+100));
+color:white;
+font-style:bold;
+}
+
+
+
+QPushButton
+{
+color: white;
+background-color: #27a9e3;
+border-width: 2px;
+border-radius: 12px;
+height:25px;
+}
+
+QPushButton:hover { background-color: lime; }
+
+QLabel
+{
+color: white; 
+border: 2px solid #27a9e3;
+border-radius: 10px;
+padding: 2px;
+
+}
+QTextEdit {
+ border: 2px solid #27a9e3;
+ border-radius: 30px;
+ background-color: rgba(0,0,0,0);
+
+ }
+
+QTextEdit#textEdit_RAW{
+	font-family: &quot;Verdana&quot;;
+	font-size: 14px ;
+	font-style: bold;
+	padding:5px;
+   color:white;
+}
+
+QTextEdit#textEdit_PROCCES{
+    font-family: &quot;Verdana&quot;;
+	font-size: 20px ;
+	font-style: bold;
+	padding:5px;
+   color:white;
+}
+
+QComboBox{
+color: white;
+background-color: #27a9e3;
+border-width: 2px;
+border-radius: 12px;
+height:25px;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 6px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 6px;
+}
+
+
+
+
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="RadarSensor">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>190</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

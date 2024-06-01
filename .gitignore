@@ -50,3 +50,21 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Ignora todos los archivos 
+*.qrc
+*.user
+*.user
+*.html
+*.mbed
+*.bld
+
+# Ignora el directorio
+.vscode
+BUILD
+
+# Ignora el archivo especifico debug.log
+Makefile
+myMakeCFG
+myMakefile
+build-UI_THOR-Desktop_Qt_6_5_0_MinGW_64_bit-Debug/

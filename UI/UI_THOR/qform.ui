@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QForm</class>
+ <widget class="QMainWindow" name="QForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1245</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>QForm</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* ------------------- Estilo general ------------------- */
+
+/* Fondo verde claro para todos los elementos */
+* {
+    background-color: #0E2C40;
+    /* Texto blanco para todos los elementos */
+    color: white;
+}
+
+/* ------------------- Estilo para el widget central ------------------- */
+
+#centralwidget {
+    background-color: #0E2C40;
+}
+
+/* ------------------- Estilo para menús ------------------- */
+
+QMenu {
+    /* Fondo gradiente para el menú */
+    background-color: qlineargradient(spread: reflect, x1: 0.9, y1: 0, x2: 0.6, y2: 0, x3: 0.2, y3: 0, stop: 0.2 rgba(100, 210, 255, 70), stop: 0.5 rgba(91, 180, 249, 70), stop: 1 rgba(32, 80, 96, 100));
+    color: white; /* Texto blanco en el menú */
+    font-style: bold; /* Estilo de fuente en negrita */
+}
+
+/* ------------------- Estilo para botones ------------------- */
+
+QPushButton {
+    color: white; /* Texto blanco en el botón */
+    background-color: #27a9e3; /* Fondo azul del botón */
+    border-width: 2px; /* Ancho del borde */
+    border-radius: 12px; /* Esquinas redondeadas */
+    height: 25px; /* Altura del botón */
+}
+
+QPushButton:hover {
+    background-color: lime; /* Cambio de color al pasar el mouse sobre el botón */
+}
+
+/* ------------------- Estilo para etiquetas ------------------- */
+
+QLabel {
+    color: white; /* Texto blanco en la etiqueta */
+    border: 2px solid #27a9e3; /* Borde sólido azul */
+    border-radius: 10px; /* Esquinas redondeadas */
+    padding: 2px; /* Espaciado interno */
+}
+
+/* ------------------- Estilo para áreas de texto editable ------------------- */
+
+QTextEdit {
+    border: 2px solid #27a9e3; /* Borde sólido azul */
+    border-radius: 30px; /* Esquinas redondeadas */
+    background-color: rgba(0, 0, 0, 0); /* Fondo transparente */
+}
+
+/* Estilo específico para áreas de texto con identificadores */
+QTextEdit#textEdit_RAW {
+    font-family: &quot;Verdana&quot;;
+    font-size: 14px;
+    font-style: bold;
+    padding: 5px;
+    color: white;
+}
+
+QTextEdit#textEdit_PROCCES {
+    font-family: &quot;Verdana&quot;;
+    font-size: 20px;
+    font-style: bold;
+    padding: 5px;
+    color: white;
+}
+
+/* ------------------- Estilo para cuadros combinados ------------------- */
+
+QComboBox {
+    color: white; /* Texto blanco en el cuadro combinado */
+    background-color: #27a9e3; /* Fondo azul del cuadro combinado */
+    border-width: 2px; /* Ancho del borde */
+    border-radius: 12px; /* Esquinas redondeadas */
+    height: 25px; /* Altura del cuadro combinado */
+}
+
+QComboBox:on {
+    /* Ajusta el texto cuando se abre el menú desplegable */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: 0E2C40;
+    border-left-style: solid; /* Línea simple a la izquierda */
+    border-top-right-radius: 6px; /* Mismo radio que el QComboBox */
+    border-bottom-right-radius: 6px;
+}
+
+/* Estilo para QTabWidget (tabWidget) */
+QTabWidget {
+    color: black; /* Texto blanco en el cuadro combinado */
+    background-color: #27a9e3; /* Fondo azul del cuadro combinado */
+	border: 1px solid #148D8D; /* Borde turquesa */
+    border-width: 2px; /* Ancho del borde */
+    border-radius: 12px; /* Esquinas redondeadas */
+    height: 25px; /* Altura del cuadro combinado */
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_6" rowstretch="0,0">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0,1,1">
+      <item>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="title">
+         <string>Comunicacion</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout">
+             <item>
+              <widget class="QPushButton" name="pushButtonSENDCMD">
+               <property name="text">
+                <string>Send CMD</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonALIVE">
+               <property name="text">
+                <string>ALIVE</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonSENDUDP">
+               <property name="text">
+                <string>Send UDP</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="comboBox_CMD"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>local PORT:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_LOCALPORT">
+               <property name="text">
+                <string>30010</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonOPENUDP">
+               <property name="text">
+                <string>OPEN UDP</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>device IP :</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_IP_REMOTA"/>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>device PORT:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="lineEdit_DEVICEPORT">
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="title">
+         <string>Modo</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_4" rowstretch="0,0,0" columnstretch="1,0,1">
+         <item row="0" column="0" rowspan="2">
+          <widget class="QLCDNumber" name="lcdNumberMode">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
+           <property name="digitCount">
+            <number>1</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QRadioButton" name="radioButtonUpdateRealTime">
+           <property name="text">
+            <string>UPDATE REAL TIME</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1" rowspan="2">
+          <widget class="QLabel" name="label_10">
+           <property name="text">
+            <string>STATUS</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2" rowspan="2">
+          <widget class="QLabel" name="labelStatus">
+           <property name="text">
+            <string>IDLE</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="pushButtonStartStop">
+           <property name="text">
+            <string>START</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="pushButtonReset">
+           <property name="text">
+            <string>RESET</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="title">
+         <string>Caminos recorridos</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5" rowstretch="0,0,0" columnstretch="0,1">
+         <item row="0" column="0" colspan="2">
+          <widget class="QProgressBar" name="progressBar">
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0" rowspan="2">
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <widget class="QLineEdit" name="lineEdit">
+             <property name="text">
+              <string>NUMBER</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="lineEdit_2">
+             <property name="text">
+              <string>TIME</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="1">
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_19">
+             <property name="text">
+              <string>...</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Sensores IR</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QFrame" name="widgetADC">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Aceleracion Motores</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QWidget" name="widgetVelMotor" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Datos</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_10">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_5">
+              <item>
+               <widget class="QLabel" name="label">
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>LEFT_IR</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>CENTER_IR</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_5">
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>RIGHT_ENCODER</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_6">
+              <item>
+               <widget class="QLabel" name="label_LIR">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>LIR</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_CIR">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>CIR</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_RIR">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>RIR</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_7">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>LEFT_ENCODER</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>RIGHT_IR</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_LENC">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>L_ENC</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_RENC">
+                <property name="font">
+                 <font>
+                  <pointsize>12</pointsize>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="frameShape">
+                 <enum>QFrame::Panel</enum>
+                </property>
+                <property name="text">
+                 <string>R_ENC</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="frameShape">
+               <enum>QFrame::Panel</enum>
+              </property>
+              <property name="text">
+               <string>DISTANCE:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_DISTANCE">
+              <property name="font">
+               <font>
+                <pointsize>28</pointsize>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::Panel</enum>
+              </property>
+              <property name="text">
+               <string>168 cm</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_11">
+          <item>
+           <widget class="QTextEdit" name="textEdit_RAW">
+            <property name="font">
+             <font>
+              <family>Verdana</family>
+              <pointsize>-1</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:14px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px; text-decoration: underline;&quot;&gt;Dato sin procesar&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextEdit" name="textEdit_PROCCES">
+            <property name="font">
+             <font>
+              <family>Verdana</family>
+              <pointsize>-1</pointsize>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Verdana'; font-size:20px; font-weight:700; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:24px; font-weight:400; text-decoration: underline;&quot;&gt;Dato procesado&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1245</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDivice">
+    <property name="title">
+     <string>Divice</string>
+    </property>
+    <addaction name="actionDebugger"/>
+    <addaction name="actionMaps"/>
+    <addaction name="actionQuit"/>
+    <addaction name="actionScan_Ports"/>
+    <addaction name="actionConnect_Device"/>
+    <addaction name="actionDisconnect_Device"/>
+   </widget>
+   <addaction name="menuDivice"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionDebugger">
+   <property name="text">
+    <string>Debugger</string>
+   </property>
+  </action>
+  <action name="actionMaps">
+   <property name="text">
+    <string>Maps</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionScan_Ports">
+   <property name="text">
+    <string>Scan Ports</string>
+   </property>
+  </action>
+  <action name="actionConnect_Device">
+   <property name="text">
+    <string>Connect Device</string>
+   </property>
+  </action>
+  <action name="actionDisconnect_Device">
+   <property name="text">
+    <string>Disconnect Device</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
